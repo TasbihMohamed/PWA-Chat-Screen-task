@@ -24,8 +24,6 @@ const Home = () => {
     fetchProducts();
   }, []);
 
-//   console.log("Products :", products);
-//   console.log("test :", data);
   return <HomeTemplate data={data} products={products} />;
 };
 
