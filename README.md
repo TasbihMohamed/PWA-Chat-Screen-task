@@ -2,7 +2,7 @@ project deployment Link :
 https://645bcec86012c31ed45bf0da--dreamy-platypus-c9516b.netlify.app/
 
 video:
-https://github.com/TasbihMohamed/PWA-Chat-Screen-task/assets/107681344/c2c3a595-4b40-4a69-bef0-3eff138e6578
+https://github.com/TasbihMohamed/PWA-Chat-Screen-task/assets/107681344/aca51c73-b3f6-4b7c-b83a-18c4be7c14ac
 
 image:
 
