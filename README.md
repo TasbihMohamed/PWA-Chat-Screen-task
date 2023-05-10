@@ -1,12 +1,12 @@
 project deployment Link :
 https://645bcec86012c31ed45bf0da--dreamy-platypus-c9516b.netlify.app/
 
-video:
-https://github.com/TasbihMohamed/PWA-Chat-Screen-task/assets/107681344/aca51c73-b3f6-4b7c-b83a-18c4be7c14ac
-
 image:
 
 ![screencapture-localhost-3000-2023-05-10-19_54_34](https://github.com/TasbihMohamed/PWA-Chat-Screen-task/assets/107681344/a77aea1f-de2d-4813-ae6a-1cba2599f7de)
+
+video:
+https://github.com/TasbihMohamed/PWA-Chat-Screen-task/assets/107681344/aca51c73-b3f6-4b7c-b83a-18c4be7c14ac
 
 # Getting Started with Create React App
 
