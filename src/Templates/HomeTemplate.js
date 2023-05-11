@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import axios from "axios";
+import React from "react";
 
-import { Container, Stack, Typography, Box } from "@mui/material";
+
+import { Container, Stack, Box } from "@mui/material";
 import Title from "../Molecules/Title";
 import Header from "../Molecules/Header";
 import Chat from "../Molecules/Chat";

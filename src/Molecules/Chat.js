@@ -1,14 +1,26 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Avatar, Badge, Box, Stack, Typography } from "@mui/material";
 import React from "react";
 import MessageTime from "../Atoms/MessageTime";
+import solid from "../Assets/Images/check-verified-02.png";
+import { styled } from "@mui/material/styles";
+import "../App.css";
 
 export default function Chat({ products }) {
+  const StyledBadge = styled(Badge)(({ theme }) => ({
+    "& .MuiBadge-badge": {
+      right: 8,
+      top: 22,
+      padding: "0 4px",
+    },
+  }));
+
   return (
     <>
+      <MessageTime time={products[0]?.time} />
+
       {products?.map((item) => {
         return (
           <Stack key={item.id}>
-            <MessageTime time={item?.time} />
             <Stack
               gap={1}
               sx={{
@@ -18,31 +30,50 @@ export default function Chat({ products }) {
             >
               {/* profile img */}
 
-              <Box>
-                <Stack
-                  sx={{
-                    borderRadius: 30,
-                    width: 30,
-                    overflow: "hidden",
-                  }}
-                >
-                  <Stack
-                    sx={{
-                      backgroundImage: `url(${item?.sender?.image})`,
-                      backgroundRepeat: "no-repeat",
-                      backgroundSize: "contain",
-                      height: 30,
-                      width: 30,
-                    }}
-                  ></Stack>
-                </Stack>
-              </Box>
+              {item?.sender?.self == false && (
+                <Box>
+                  <StyledBadge
+                    badgeContent={
+                      <img
+                        src={solid}
+                        style={{
+                          width: "10px",
+                          position: "absolute",
+                          bottom: "2px",
+                          right: "0",
+                          zIndex: "1",
+                        }}
+                      />
+                    }
+                    // color="primary"
+                    sx={{ zIndex: "1" }}
+                  >
+                    <Stack
+                      sx={{
+                        backgroundImage: `url(${item?.sender?.image})`,
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "contain",
+                        height: 30,
+                        width: 30,
+
+                        borderRadius: 5,
+                        zIndex: 0,
+                      }}
+                    ></Stack>
+                  </StyledBadge>
+                </Box>
+              )}
               {/* msg */}
+
               <Stack
                 sx={{
-                  p: 1,boxShadow:"0px 4px 8px rgba(0, 0, 0, 0.08)",
+                  p: 1,
+                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.08)",
                   background: item?.sender?.self ? "#1C63D5" : "white",
-                  borderRadius: 3,
+                  borderTopLeftRadius: item?.sender?.self ? 15 : 0,
+                  borderBottomRightRadius: item?.sender?.self ? 0 : 15,
+                  borderTopRightRadius: 15,
+                  borderBottomLeftRadius: 15,
                 }}
               >
                 <Typography

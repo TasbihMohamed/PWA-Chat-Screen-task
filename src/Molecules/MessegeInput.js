@@ -1,10 +1,13 @@
-import { Stack } from "@mui/material";
-import React from "react";
+import { IconButton, Stack } from "@mui/material";
+import React, { useState } from "react";
 import sendIcon from "../Assets/Images/sendIcon.png";
 import PopUp from "../Atoms/PopUp";
+import filesIcon from "../Assets/Images/filesIcon.png";
 
 export default function MessegeInput({ data }) {
   const text = `Reply to @${data?.to}`;
+  const [hide, setHide] = useState(false);
+
   return (
     <Stack
       sx={{
@@ -33,13 +36,22 @@ export default function MessegeInput({ data }) {
         }}
         direction="row"
       >
-        <Stack >
-          <PopUp />
+        <Stack>
+          {hide && <PopUp />}
+          <IconButton>
+            <img
+              src={`${filesIcon}`}
+              onClick={() => setHide(!hide)}
+              alt="filesIcon"
+            />
+          </IconButton>
         </Stack>
         <Stack>
           <img src={`${sendIcon}`} alt="sendIcon" />
         </Stack>
+      
       </Stack>
+  
     </Stack>
   );
 }
