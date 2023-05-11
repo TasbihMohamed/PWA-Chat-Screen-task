@@ -37,7 +37,7 @@ export default function Chat({ products }) {
                       <img
                         src={solid}
                         style={{
-                          width: "10px",
+                          width: item?.sender?.is_kyc_verified?"10px":"0px",
                           position: "absolute",
                           bottom: "2px",
                           right: "0",
